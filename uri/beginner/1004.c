@@ -13,4 +13,6 @@ int main() {
 
     PROD = a * b;
     printf("PROD = %d\n", PROD);
+
+    return 0;
 }

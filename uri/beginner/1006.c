@@ -14,4 +14,6 @@ int main() {
 
     MEDIA = (0.2 * A) + (0.3 * B) + (0.5 * C);
     printf("MEDIA = %.1lf\n", MEDIA);
+
+    return 0;
 }
