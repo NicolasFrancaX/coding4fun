@@ -35,4 +35,6 @@ int main() {
     } else {
         printf("Aluno reprovado.\n");
     }
+
+    return 0;
 }
