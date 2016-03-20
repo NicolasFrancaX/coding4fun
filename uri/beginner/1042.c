@@ -15,9 +15,7 @@ int main() {
     input[2] = x[2];
 
     for(i = 0; i <= 3 ; i++) {
-
         for(j = 0; j < 2; j++) {
-          
             if(x[j] > x[j + 1]) {
                 aux = x[j + 1];
                 x[j + 1] = x[j];
