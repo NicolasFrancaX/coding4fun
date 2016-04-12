@@ -14,7 +14,7 @@ int main() {
         count++;
     } while(m[count - 1] != 0);
 
-    for(h = 0; h < count; h++) {
+    for(h = 0; h < count - 1; h++) {
         int n[m[h]][m[h]];
 
         for(i = 0; i < m[h]; i++) {
@@ -37,6 +37,8 @@ int main() {
 
                 if(j == m[h] - 1) {
                     printf("\n");
+                } else {
+                    printf(" ");
                 }
             }
         }
