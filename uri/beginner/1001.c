@@ -1,6 +1,6 @@
 /*
  * Problem: https://www.urionlinejudge.com.br/judge/en/problems/view/1001
- *
+ * .
  */
 
 #include <stdio.h>
