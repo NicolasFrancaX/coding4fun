@@ -1,0 +1,18 @@
+  Testing   leading,   trailing and   multiple      spaces  between words, and    having soo many <br> line breaks in sequence.   
+ 
+   
+ 
+<br> Maximum width should be of eighty characters, anything BEYOND that limit, should go on another line. <br> <br>
+
+12345678901234567890123456789012345678901234567890123456789012345678901234567 x <br>
+123456789012345678901234567890123456789012345678901234567890123456789012345678 x <br>
+1234567890123456789012345678901234567890123456789012345678901234567890123456789 x <br>
+12345678901234567890123456789012345678901234567890123456789012345678901234567890 <br>
+ 
+            Now testing horizontal lines.    <br> <br> <br> <hr> <br> <hr> <hr> <br> <br> test... <br> ...test <hr>  
+ 
+      
+                                                                                          and trailing blank lines.
+    
+ 
+                       
