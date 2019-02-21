@@ -8,6 +8,6 @@
                          (_____|                         
 ```
 
-PS.: Por ser problemas de maratona, não vou refatora-los, pois em uma maratona real eu não teria tempo pra isso.
+Novidades em breve. :)
 
 © Copyright 2016 Nicolas França - All Rights Reserved
