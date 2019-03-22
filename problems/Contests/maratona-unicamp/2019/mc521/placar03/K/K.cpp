@@ -28,8 +28,29 @@ public:
 	int sizeOfSet(int i) { return setSize[findSet(i)]; }
 };
 
+// UnionFind
 int main() {
-	cout << "Hello world!\n";
-	return 1;
+	cin.tie(NULL);
+	ios_base::sync_with_stdio(0);
+
+	int N, Q;
+	int a, b;
+	char operation;
+
+	cin >> N >> Q;
+
+	UnionFind UF(N);
+
+	while (Q--) {
+		cin >> operation >> a >> b;
+
+		if (operation == '?')
+			if (UF.isSameSet(a, b)) cout << "yes\n";
+			else cout << "no\n";
+		else UF.unionSet(a, b);
+	}
+
+	
+	return 0;
 }
 
