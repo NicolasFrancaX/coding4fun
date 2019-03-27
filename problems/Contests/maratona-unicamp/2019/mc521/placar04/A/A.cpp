@@ -2,6 +2,7 @@
 
 using namespace std;
 
+<<<<<<< HEAD
 typedef long long ull;
 
 ull gcd(ull N, ull X) {
@@ -19,10 +20,13 @@ ull gcdi(vector<int> V) {
 	return bla;
 }
 
+=======
+>>>>>>> f80c45500fc35031616cfc90eb7f2f656d9ecb83
 int main() {
 	cin.tie(NULL);
 	ios_base::sync_with_stdio(0);
 
+<<<<<<< HEAD
 	ull n, x;
 	ull in;
 
@@ -41,6 +45,8 @@ int main() {
 		if (x % res == 0) cout << "YES\n";
 		else cout << "NO\n";
 	}
+=======
+>>>>>>> f80c45500fc35031616cfc90eb7f2f656d9ecb83
 
 	return 0;
 }
