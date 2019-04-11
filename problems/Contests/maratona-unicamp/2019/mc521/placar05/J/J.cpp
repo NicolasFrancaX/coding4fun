@@ -1,43 +1,44 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstdio>
+#include <vector>
 
 using namespace std;
 
 typedef long long ll;
 
-int main()
-{
+int main() {
+	cin.tie(NULL);
+	ios_base::sync_with_stdio(0);
 
 	int N;
 	int sum = 0;
-	int in = 1;
+	int in;
+
+	cin >> N;
+
+	vector<int> V;
+	V.reserve(N);
 	
-	scanf("%d ",&N);
-	
-	int V[N-1];
-	int i;
-	for(i = 0;; i++) {
-		scanf("%d ",&in);
-		//cin >> in; 
-		V[i] = in;
+	for(int i = N; i ; i--) {
+		cin >> in; V.push_back(in);
 		sum+=in;
-		if (in == 0)
-			break;
 	}
 
-	if (sum < N) {
+	if (sum <= N-1) {
 		printf("YES\n");
-		/* i = player a matar */
-		/* comecando pelo com kills !=0 */
-		for(/*i = ultimo*/; i >= 0 ; i--) {
-			/* V[i] numero de kills do player faltantes */
+
+		int i = N-1; 
+		
+		while(!V[i]) i--;
+
+		for(; i >= 0 ; i--)
 			while(V[i]--) {
-				/* N = player a ser morto */
-				printf("%d %d\n",i+1,N); N--;
+				printf("%d %d\n",i+1,N);
+				N--;
 			}
-		}
-	}
-	else {
+	} else {
 		printf("NO\n");
+
 		return 0;
 	} 
 
