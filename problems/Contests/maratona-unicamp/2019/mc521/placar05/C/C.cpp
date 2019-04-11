@@ -4,32 +4,35 @@ using namespace std;
 
 typedef long long ll;
 
+bool verification(string W) {
+	char f = W[0];
+
+	for (auto it = W.begin(); it != W.end(); it++) {
+		if (f != *it) return false;
+
+		f++;
+	}
+
+	return true;
+}
+
 int main() {
 	cin.tie(NULL);
 	ios_base::sync_with_stdio(0);
 
-	ll N, Q;
-	ll n;
+	int N;
 
-	cin >> N >> Q;
+	cin >> N;
+	string word;
 
-	map<int, int> M;
-	
-	for (int i = 0; i < N; i++) {
-		cin >> n;
+	while (N--) {
+		cin >> word;
 
-		if (M.find(n) == M.end())
-			M[n] = i;
+		sort(word.begin(), word.end());
+
+		if (verification(word)) cout << "Yes\n";
+		else cout << "No\n";
 	}
-
-	while (Q--) {
-		cin >> n;
-
-		if (M.find(n) != M.end())
-			cout << M[n] << endl;
-		else 	cout << -1 << endl;
-	}
-
 	
 	return 0;
 }

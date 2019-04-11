@@ -2,43 +2,46 @@
 
 using namespace std;
 
-char print_assent(bool v) {
-	return v ? 'O' : '#';
+int z[2001][2001];
+
+int knapsack(int W, int w[], int c[], int n) {
+	int i, j;
+
+	for (i = 0; i <= n; i++) {
+		for (j = 0; j <= W; j++) {
+			if (i == 0 || j == 0) z[i][j] = 0;
+			else if (w[i-1] <= j) z[i][j] = max(c[i-1]+z[i-1][j-w[i-1]], z[i-1][j]);
+			     else z[i][j] = z[i-1][j];
+		}
+	}
+
+	return z[n][W];
 }
 
 int main() {
 	cin.tie(NULL);
 	ios_base::sync_with_stdio(0);
 
-	vector<bool> assents(34);
+	int S, N;
+	int size, value;
 
-	fill(assents.begin(), assents.end(), false);
-	int k;
+	cin >> S >> N;
 
-	cin >> k;
+	int c[N], w[N];
 
-	for (int i = 0; i < k; i++)
-		assents[i] = true;
+	int result;
 
-	printf("+------------------------+\n");
-	printf("|%c.%c.%c.%c.%c.%c.%c.%c.%c.%c.%c.|D|)\n", print_assent(assents[0]), 
-			print_assent(assents[4]), print_assent(assents[7]), print_assent(assents[10]), 
-			print_assent(assents[13]), print_assent(assents[16]), print_assent(assents[19]),
-			print_assent(assents[22]), print_assent(assents[25]), print_assent(assents[28]),
-			print_assent(assents[31]));
+	memset(z, 0, 2001*2001*sizeof(int));
 
-	printf("|%c.%c.%c.%c.%c.%c.%c.%c.%c.%c.%c.|.|\n", print_assent(assents[1]), 
-			print_assent(assents[5]), print_assent(assents[8]), print_assent(assents[11]), 
-			print_assent(assents[14]), print_assent(assents[17]), print_assent(assents[20]),
-			print_assent(assents[23]), print_assent(assents[26]), print_assent(assents[29]),
-			print_assent(assents[32]));
-	printf("|%c.......................|\n", print_assent(assents[2]));
-	printf("|%c.%c.%c.%c.%c.%c.%c.%c.%c.%c.%c.|.|)\n", print_assent(assents[3]), 
-			print_assent(assents[6]), print_assent(assents[9]), print_assent(assents[12]), 
-			print_assent(assents[15]), print_assent(assents[18]), print_assent(assents[21]),
-			print_assent(assents[24]), print_assent(assents[27]), print_assent(assents[30]),
-			print_assent(assents[33]));
-	printf("+------------------------+\n");
+
+	for (int i = 0; i < N; i++) {
+		cin >> size >> value;
+		c[i] = value; w[i] = size;
+	}
+
+	result = knapsack(S, w, c, N);
+
+	cout << result << endl;
 
 
 	return 0;

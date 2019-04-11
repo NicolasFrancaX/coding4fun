@@ -1,47 +1,44 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstdio>
+#include <cstring>
 
 using namespace std;
 
-typedef long long ull;
+typedef long long int ull;
 
-ull gcd(ull N, ull X) {
-	if (!X) return N;
-	return gcd(X, N%X);
-}
+ull F[6*100000];
+bool B[6*100000];
 
-ull gcdi(vector<int> V) {
-	ull bla = gcd(V[0], V[1]);
-
-	for (unsigned int i = 2; i < V.size(); i++) {
-		bla = gcd(bla, V[i]);
+ull solve(ull n) {
+	if (B[n]) return F[n];
+	else {
+		ull s1 = solve(n-1); 
+		ull s2 = solve(n-2);
+		B[n] = true;
+		F[n] = (s1+s2)%(100000000+7);
+		return F[n];
 	}
-
-	return bla;
 }
 
 int main() {
 	cin.tie(NULL);
 	ios_base::sync_with_stdio(0);
 
-	ull n, x;
-	ull in;
+	memset(B, 0, sizeof(B));	
 
-	while (cin >> n >> x) {
-		bool answer = true;
+	F[0] = 0; B[0] = true;
+	F[1] = 1; B[1] = true;
 
-		vector<int> V;
+	ull T;
+	ull n;
 
-		for (int i = 0; i < n; i++) {
-			cin >> in; V.push_back(in);
-		}
-
-		ull res = gcdi(V);
-
-
-		if (x % res == 0) cout << "YES\n";
-		else cout << "NO\n";
+	scanf("%lld", &T);
+	while (T--) {
+		scanf("%lld", &n);
+		
+		printf("%lld\n", solve(n));
 	}
+
 
 	return 0;
 }
-
