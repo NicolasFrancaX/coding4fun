@@ -1,0 +1,62 @@
+\documentclass[a4paper,11pt,fleqn]{article}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{xspace}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\usepackage{calligra}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+
+\title{Relatório - Placar 1\\
+Desafios de Programaçao - MC521}
+\author{Aluno: Nicolas França\\\\
+Professor: Fábio Luiz Usberti\\\\
+Unicamp - Instituto de Computação\\}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{C}
+\label{s:c}
+
+Nos é dado o $\mathcallibra{a}$, $\mathcallibra{b}$ e $\mathcallibra{c}$ de uma 
+  \textbf{Equação Diofantina Linear}. Sabemos que é uma \textbf{Equação Diofantina Linear} pois $\mathcallibra{a}$, $\mathcallibra{b}$ e 
+  $\mathcallibra{c}$ são números inteiros e $\mathcallibra{x}$ e $\mathcallibra{y}$ só
+  podem ser inteiros.
+
+Sabemos que uma \textbf{Equação Diofantina Linear} só pode ser resolvida \textbf{se}
+  $\mathcallibra{c}$ é divisível por $\mathcallibra{gcd(a, b)}$. Logo, se calcularmos
+  o $\mathcallibra{gcd(a, b)}$ e observarmos que o $\mathcallibra{c}$ é divisível por ele,
+  então podemos imprimir \textbf{Yes} na tela. Do contrário, imprimimos \textbf{No}.
+
+
+\section{H}
+\label{s:h}
+
+Premissa: quase todos os números são divisíveis por 2.
+
+Então se tivermos um intervalo com 1, 2, 3, vemos que o número 2 é o divisor que aparece mais
+  vezes na sequência. Agora se tivermos o valor 3 como $\mathcallibra{l}$ e como $\mathcallibra{r}$,
+  então o número 3 é o divisor que mais aparece na sequência.
+  No caso em que o valor 9 é assumido tanto em $\mathcallibra{l}$ e em $\mathcallibra{r}$, como podemos
+  usar valores quaisquer desde que seja o divisor que mais aparece, podemos simplesmente mostrar o 
+  valor 9 mesmo.
+
+Ou seja. \textbf{Se} $\mathcallibra{l}$ = $\mathcallibra{r}$, apresentamos o valor $\mathcallibra{l}$ na tela. \textbf{Se não}, apresentamos
+  o valor 2.
+
+
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
