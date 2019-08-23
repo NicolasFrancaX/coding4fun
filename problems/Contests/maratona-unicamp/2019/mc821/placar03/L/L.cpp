@@ -4,32 +4,34 @@ using namespace std;
 
 typedef long long ll;
 
-int gcd(int a, int b) {
+ll gcd(ll a, ll b) {
 	if (b == 0) return a;
 	return gcd(b, a%b);
 }
 
-int number_of_factors(int n) {
-	int currentFactor = 2;
-	int numberFactors = 0;
+// source: https://www.geeksforgeeks.org/count-divisors-n-on13/
+ll number_of_factors(ll n) { 
+	int cnt = 0;
 
-	while (n > 1) {
-		if (n % currentFactor == 0) {
-			n /= currentFactor;
-			numberFactors++;
-		} else {
-			currentFactor++;
+	for (int i = 1; i <= sqrt(n); i++) {
+		if (n % i == 0) {
+			// If divisors are equal,
+			// count only one
+			if (n / i == i)
+				cnt++;
+
+			else // Otherwise count both
+				cnt = cnt + 2;
 		}
 	}
 
-	return numberFactors;
-}
+	return cnt;
+} 
 
 int main() {
 	int n;
-	int in;
-	int g;
-	vector<int> V;
+	ll in;
+	ll g;
 
 	cin >> n;
 
